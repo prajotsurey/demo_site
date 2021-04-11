@@ -13,7 +13,8 @@ const About = () => {
     flexRow:{
       height:"100vh",
       display:"flex",
-      alignItems:"center"
+      alignItems:"center",
+      fontFamily:"serif",
     }
   }
   return(
