@@ -1,10 +1,10 @@
 import React from 'react'
-
+import UnderConstruction from './underConstruction'
 const Work = () => {
 
   return(
     <div>
-      Work page
+      <UnderConstruction />
     </div>
   )
 }

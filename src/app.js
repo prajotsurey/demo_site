@@ -1,13 +1,9 @@
 import react from 'react'
-import Contact from './components/pages/contact'
 import LandingPage from './components/pages/landingPage'
 import Work from './components/pages/work'
 import Navigation from './components/navbar'
-import landingBackground from './static/Ali_00022.jpg'
 import Blog from './components/pages/blog'
 import About from './components/pages/about'
-
-import { useState, useEffect } from 'react'
 
 import { 
   BrowserRouter as Router,
@@ -42,9 +38,6 @@ const App = () => {
               <Switch>
                 <Route path="/work">
                   <Work/>
-                </Route>
-                <Route path="/contact">
-                  <Contact />
                 </Route>
                 <Route path="/blog">
                   <Blog />

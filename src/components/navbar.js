@@ -12,15 +12,14 @@ const Navigation = ({ changeBg }) => {
       color: 'grey',
       fontFamily: 'Serif',
       fontWeight: '400',
-      fontSize: '1.1rem'
+      fontSize: '14px'
 
     },
     title:{
       color: 'black',
       fontFamily: 'sabon',
       fontWeight: '400',
-      fontSize: 'normal',
-      fontSize: '1.2rem',
+      fontSize: '16px',
       marginBottom: '10px'
     },
     navbarHamburgerContainer:{
@@ -43,9 +42,6 @@ const Navigation = ({ changeBg }) => {
           </Nav.Item>
           <Nav.Item>
             <Nav.Link eventKey="2" style={style.links} as={Link} to="/work" >work</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="3" style={style.links} as={Link} to="/contact" >contact</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link eventKey="4" style={style.links} as={Link} to="/blog" >blog</Nav.Link>
