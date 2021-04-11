@@ -19,7 +19,7 @@ const About = () => {
   return(
     <Container fluid >
       <Row mt={3} style={style.flexRow} className="justify-content-center">
-        <Col xs={12} sm={4}>
+        <Col xs={12} md={5} lg={4}>
           <Image style={style.image} src={aboutImage} fluid/>
             <br/>
             <br/>

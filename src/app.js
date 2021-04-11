@@ -2,7 +2,7 @@ import react from 'react'
 import Contact from './components/pages/contact'
 import LandingPage from './components/pages/landingPage'
 import Work from './components/pages/work'
-import Navbar from './components/navbar'
+import Navigation from './components/navbar'
 import landingBackground from './static/Ali_00022.jpg'
 import Blog from './components/pages/blog'
 import About from './components/pages/about'
@@ -20,45 +20,23 @@ import {
 
 
 const App = () => {
-  const [bg, setBg] = useState({
-    backgroundImage: `url(${landingBackground})`
-  })
 
-  const pathname = window.location.pathname
-
-  useEffect(()=>{
-    if(pathname === '/'){
-      setBg({ backgroundImage: `url(${landingBackground})` })
-    } else {
-      setBg({})
+  const style = {
+    container:{
+      minHeight:"100vh",
+      color:'black',
+      fontFamily:'sabon',
+      fontWeight:'400',
+      fontSize:'1.1em',
     }
-  },[pathname])
-
-  const containerStyle = {
-    minHeight:"100vh",
-    color:'black',
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    fontFamily:'sabon',
-    fontWeight:'400',
-    fontSize:'1.1em',
   }
-
-  const changeBg = (page) => {
-    if(page === 'home'){
-      setBg({ backgroundImage: `url(${landingBackground})` })
-    } else{
-      setBg({})
-    }
-  }  
 
   return (
       <Router>
-        <Container fluid style={{...containerStyle, ...bg}}>
+        <Container fluid >
           <Row>
-            <Col xs={2} style={{backgroundColor:'green', zIndex:'2'}}>
-              <Navbar changeBg={changeBg}/>
+            <Col xs={2} style={{zIndex:'2'}}>
+              <Navigation/>
             </Col>
             <Col xs={12}>
               <Switch>

@@ -3,15 +3,11 @@ import {
   Link
 } from "react-router-dom"
 import {
-  Nav,
+  Nav,Navbar,
 } from "react-bootstrap"
 
-const Navbar = ({ changeBg }) => {
+const Navigation = ({ changeBg }) => {
   const style={
-    sidebar:{
-      position:'fixed',
-      color: 'black',
-    },
     links:{
       color: 'grey',
       fontFamily: 'Serif',
@@ -26,18 +22,43 @@ const Navbar = ({ changeBg }) => {
       fontSize: 'normal',
       fontSize: '1.2rem',
       marginBottom: '10px'
-    }
+    },
+    navbarHamburgerContainer:{
+      color:'Black',
+      border: '1px solid black',
+      borderRadius: '50%',
+      padding: '4px',
+      fontSize: '1rem',
+    },
   }
-  
+
   return(
-    <Nav style={style.sidebar} defaultActiveKey="/home" className="flex-column">
-      <Nav.Link style={style.title} as={Link} to="/" onClick={()=>{changeBg('home')}}> ali monis naqvi </Nav.Link>
-      <Nav.Link style={style.links} as={Link} to="/work" onClick={()=>{changeBg('work')}}>work</Nav.Link>
-      <Nav.Link style={style.links} as={Link} to="/contact" onClick={()=>{changeBg('contact')}}>contact</Nav.Link>
-      <Nav.Link style={style.links} as={Link} to="/blog" onClick={()=>{changeBg('blog')}}>blog</Nav.Link>
-      <Nav.Link style={style.links} as={Link} to="/about" onClick={()=>{changeBg('about')}}>about</Nav.Link>
-    </Nav>
+    <>
+    <Navbar collapseOnSelect fixed="top" expand="sm">
+      <Navbar.Toggle aria-controls="responsive-navbar-nav"  style={style.navbarHamburgerContainer}/>
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="flex-column" >
+          <Nav.Item >
+            <Nav.Link eventKey="1" style={style.title} as={Link} to="/" > ali monis naqvi </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="2" style={style.links} as={Link} to="/work" >work</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="3" style={style.links} as={Link} to="/contact" >contact</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="4" style={style.links} as={Link} to="/blog" >blog</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="5" style={style.links} as={Link} to="/about" >about</Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+    
+    </>
   )
 }
 
-export default Navbar
+export default Navigation

@@ -1,7 +1,9 @@
 import React from 'react'
 import {
-  Container,Row,Col
+  Row,Col
 } from 'react-bootstrap'
+import landingBackground from '../../static/Ali_00022.jpg'
+import { useSpring, animated } from 'react-spring'
 
 const LandingPage = () => {
   const style={
@@ -13,17 +15,24 @@ const LandingPage = () => {
     flexRow:{
       height:"100vh",
       display:"flex",
-      alignItems:"center"
+      alignItems:"center",
+      padding:"0px",
+    },
+    landingBackground:{ 
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundImage: `url(${landingBackground})`,
     }
   }
+  const props = useSpring({config:{ duration:650 },opacity: 1, from: {opacity: 0}})
+
   return(
-    <Container fluid>
-      <Row style={style.flexRow} className="justify-content-md-center">
-        <Col md="auto" style={style.centerHeading}>
+      <Row as={animated.div} style={{...style.flexRow, ...style.landingBackground, ...props}} className="justify-content-center">
+        <Col xs="auto" style={style.centerHeading}>
         سلام  
         </Col>
       </Row>
-    </Container>
   )
 }
 
